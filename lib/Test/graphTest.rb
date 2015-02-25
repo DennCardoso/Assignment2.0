@@ -1,4 +1,5 @@
 require 'test/unit'
+require '../Graph/Graph'
 
 class MyTest < Test::Unit::TestCase
 
@@ -15,8 +16,11 @@ class MyTest < Test::Unit::TestCase
     # Do nothing
   end
 
-  # Fake test
   def test_fail
-    fail('Not implemented')
+
+      fileReturn = Graph.json_info_path
+      assert_equal(2053, fileReturn['routes'])
+
+    end
   end
 end
