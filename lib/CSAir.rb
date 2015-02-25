@@ -2,14 +2,13 @@ require "rubygems"
 require "json"
 
 module CSAir
-  puts __FILE__
 
-  #!config_path = File.expand_path(File.join(File.dirname(__FILE__), "test.json"))
-  config_path = File.expand_path("../../Resources/test.json", __FILE__)
+  def self.json_info_path
+    config_path = File.expand_path("../../Resources/test.json", __FILE__)
+    file = File.read(config_path)
+    data_hash = JSON.parse(file)
+    return data_hash
+  end
 
-  puts config_path
-  file = File.read(config_path)
-  data_hash = JSON.parse(file)
-
-  puts(data_hash)
+  puts(json_info_path)
 end
