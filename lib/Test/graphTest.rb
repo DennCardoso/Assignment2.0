@@ -1,26 +1,14 @@
 require 'test/unit'
-require '../Graph/Graph'
+require '../Graph/Vertex'
+require '../Graph/graph'
+require '../Graph/edge'
 
 class MyTest < Test::Unit::TestCase
 
-  # Called before every test method runs. Can be used
-  # to set up fixture information.
-  def setup
-    # Do nothing
+  def testEdge_add
+    @vertex =  Vertex.new('NW')
+    @Edge = Edge.new('NYC','MEX',5345)
+    assert(Graph.edge_add(@vertex, @Edge, 'CLR','SRV',2345))
   end
 
-  # Called after every test method runs. Can be used to tear
-  # down fixture information.
-
-  def teardown
-    # Do nothing
-  end
-
-  def test_fail
-
-      fileReturn = Graph.json_info_path
-      assert_equal(2053, fileReturn['routes'])
-
-    end
-  end
 end

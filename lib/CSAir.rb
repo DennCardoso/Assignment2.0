@@ -10,5 +10,5 @@ module CSAir
     return data_hash
   end
   #!puts(json_info_path['metros'] => code)
-  puts(json_info_path['routes'][5]['distance'])
+  #!puts(json_info_path['routes'][5]['distance'])
 end
